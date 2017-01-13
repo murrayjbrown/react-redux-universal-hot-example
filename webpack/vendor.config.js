@@ -58,6 +58,7 @@ module.exports = {
 
       // </babel-runtime>
 
+      'jquery',
       'multireducer',
       'react',
       'react-bootstrap',
