@@ -2,8 +2,8 @@ import auth from 'feathers-authentication';
 import jwt from 'feathers-authentication-jwt';
 import local from 'feathers-authentication-local';
 // import oauth1 from 'feathers-authentication-oauth1';
-import oauth2 from 'feathers-authentication-oauth2';
-import FacebookTokenStrategy from 'passport-facebook-token';
+// import oauth2 from 'feathers-authentication-oauth2';
+// import FacebookTokenStrategy from 'passport-facebook-token';
 import hooks from 'feathers-hooks-common';
 import { verifyJWT } from 'feathers-authentication/lib/utils';
 
@@ -52,12 +52,12 @@ export default function authenticationService() {
 
   app.configure(auth(config))
     .configure(jwt())
-    .configure(local())
+    .configure(local());
     // .configure(oauth1()) // TODO twitter example
-    .configure(oauth2({
-      name: 'facebook', // if the name differs from your config key you need to pass your config options explicitly
-      Strategy: FacebookTokenStrategy
-    }));
+    // .configure(oauth2({
+    //  name: 'facebook', // if the name differs from your config key you need to pass your config options explicitly
+    //  Strategy: FacebookTokenStrategy
+    // }));
 
 
   app.service('authentication')
@@ -65,7 +65,8 @@ export default function authenticationService() {
       before: {
         create: [
           // You can chain multiple strategies
-          auth.hooks.authenticate(['jwt', 'local', 'facebook'])
+          // auth.hooks.authenticate(['jwt', 'local', 'facebook'])
+          auth.hooks.authenticate(['jwt', 'local'])
         ],
         remove: [
           auth.hooks.authenticate('jwt')
