@@ -216,11 +216,6 @@ var webpackConfig = module.exports = {
     })
   ]
 };
-/*
-externals: [
-  "jQuery"
-],
-*/
 
 if (process.env.WEBPACK_DLLS === '1' && validDLLs) {
   helpers.installVendorDLL(webpackConfig, 'vendor');

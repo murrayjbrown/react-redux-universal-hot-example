@@ -208,8 +208,3 @@ module.exports = {
     })
   ]
 };
-/*
-externals: [
-  "jQuery"
-],
-*/
