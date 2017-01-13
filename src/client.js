@@ -18,8 +18,6 @@ import ApiClient from './helpers/ApiClient';
 import getRoutes from './routes';
 import isOnline from './utils/isOnline';
 
-global.jQuery = require('jquery');
-
 const offlinePersistConfig = {
   storage: localForage,
   whitelist: ['auth', 'info', 'chat']

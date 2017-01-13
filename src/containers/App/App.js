@@ -79,7 +79,7 @@ export default class App extends Component {
             <Navbar.Toggle />
           </Navbar.Header>
 
-          <Navbar.Collapse eventKey={0}>
+          <Navbar.Collapse>
             <Nav navbar>
               {user && <LinkContainer to="/chatFeathers">
                 <NavItem>Chat with Feathers</NavItem>
@@ -105,7 +105,9 @@ export default class App extends Component {
                 <NavItem eventKey={6}>Register</NavItem>
               </LinkContainer>}
               {user && <LinkContainer to="/logout">
-                <NavItem eventKey={7} className="logout-link" onClick={this.handleLogout}>
+                <NavItem
+                  eventKey={7} className="logout-link"
+                  onClick={this.handleLogout}>
                   Logout
                 </NavItem>
               </LinkContainer>}
@@ -115,7 +117,8 @@ export default class App extends Component {
             </p>}
             <Nav navbar pullRight>
               <NavItem
-                eventKey={1} target="_blank" title="View on Github"
+                eventKey={1} target="_blank" rel="noopener noreferrer"
+                title="View on Github"
                 href="https://github.com/erikras/react-redux-universal-hot-example">
                 <i className="fa fa-github" />
               </NavItem>
@@ -126,9 +129,9 @@ export default class App extends Component {
         <div className={styles.appContent}>
           {notifs.global && <div className="container">
             <Notifs
-              className={styles.notifs}
-              namespace="global"
-              NotifComponent={props => <Alert bsStyle={props.kind}>{props.message}</Alert>}
+              className={styles.notifs} namespace="global"
+              NotifComponent={props =>
+                <Alert bsStyle={props.kind}>{props.message}</Alert>}
             />
           </div>}
 
@@ -138,9 +141,13 @@ export default class App extends Component {
 
         <div className="well text-center">
           Have questions? Ask for help{' '}
-          <a href="https://github.com/erikras/react-redux-universal-hot-example/issues" target="_blank">on Github</a>
+          <a
+            href="https://github.com/erikras/react-redux-universal-hot-example/issues"
+            rel="noopener noreferrer" target="_blank">on Github</a>
           {' '}or in the{' '}
-          <a href="https://discord.gg/0ZcbPKXt5bZZb1Ko" target="_blank">#react-redux-universal</a>
+          <a
+            href="https://discord.gg/0ZcbPKXt5bZZb1Ko"
+            rel="noopener noreferrer" target="_blank">#react-redux-universal</a>
           {' '}Discord channel.
         </div>
       </div>

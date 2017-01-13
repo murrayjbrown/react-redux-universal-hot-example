@@ -209,9 +209,18 @@ var webpackConfig = module.exports = {
           sourceMap: true
         }
       }
-    ])
+    ]),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
+    })
   ]
 };
+/*
+externals: [
+  "jQuery"
+],
+*/
 
 if (process.env.WEBPACK_DLLS === '1' && validDLLs) {
   helpers.installVendorDLL(webpackConfig, 'vendor');

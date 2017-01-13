@@ -14,7 +14,8 @@ export default function middleware() {
     html: (error, req, res) => {
       res.json(error);
       // render your error view with the error object
-      // res.render('error', error); // set view engine of express if you want to use res.render
+      // set view engine of express if you want to use res.render
+      // res.render('error', error);
     }
   }));
 }

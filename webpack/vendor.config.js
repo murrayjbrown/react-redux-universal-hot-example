@@ -57,7 +57,7 @@ module.exports = {
       'babel-runtime/helpers/typeof',
 
       // </babel-runtime>
-
+      
       'jquery',
       'multireducer',
       'react',

@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+// import { asyncConnect } from 'redux-connect';
 import { connect } from 'react-redux';
 import app from 'app';
 import * as chatActions from 'redux/modules/chat';
