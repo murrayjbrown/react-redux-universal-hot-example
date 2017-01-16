@@ -209,7 +209,11 @@ var webpackConfig = module.exports = {
           sourceMap: true
         }
       }
-    ])
+    ]),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
+    })
   ]
 };
 

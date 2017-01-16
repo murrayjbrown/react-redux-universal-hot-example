@@ -4,7 +4,7 @@ const pretty = new PrettyError();
 
 export default function logger(app) {
   // Add a logger to our app object for convenience
-  app.logger = pretty;
+  app.logger = pretty;  // eslint-disable-line no-param-reassign
 
   return (error, req, res, next) => {
     if (error && error.code !== 404) {
